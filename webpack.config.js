@@ -29,7 +29,7 @@ module.exports = {
       filename: 'index.html',
       chunks: ['index'],
       templateParameters: {
-        title: '티몬 코딩테스트 리스트',
+        title: '티몬 마크업샘플 리스트',
       }
     }),
     new HtmlWebpackPlugin({
