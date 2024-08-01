@@ -1,0 +1,101 @@
+@import 'default'; // 공통 로드
+
+.subscribe-image {
+  margin-bottom: 40px;
+  @include borderRadius(16px);
+}
+
+.subscribe-detail {
+  &__title {
+    margin-bottom: 16px;
+    font-size: 22px;
+    color: $c-darkGrey;
+  }
+
+  &__content {
+    padding: 2px;
+    background: gradientSet(112deg, ($c-gradient-start, $c-graedient-end));
+    box-shadow: $box-shadow;
+    @include borderRadius(10px);
+    .inner {
+      padding: $spacing-x-l $spacing-y;
+      background-color: $c-white;
+      @include borderRadius(8px);
+    }
+  }
+
+  &__infor-list {}
+
+  &__infor-item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    .summary-wrap {
+      display: flex;
+      align-items: center;
+      color: $c-darkGrey;
+    }
+    .i-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .i-detail {
+      display: table-cell;
+      vertical-align: middle;
+      align-items: center;
+      margin-left: auto;
+    }
+    .i-price {
+      font-size: 20px;
+      font-weight: 700;
+      span {
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+    .i-date {
+      font-size: 13px;
+      color: $c-black;
+    }
+  }
+
+  &__sale-list {
+    margin-top: 8px;
+  }
+
+  &__sale-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-left: 14px;
+    font-size: 12px; 
+    color: $c-darkGrey;
+    .s-detail {
+      display: table-cell;
+      vertical-align: middle;
+      margin-left: auto;
+    }
+    .s-price {
+      text-decoration: underline;
+    }
+    &:before {
+      position: absolute;
+      left: 2px;
+      top: 3px;
+      width: 6px;
+      height: 6px;
+      border-width: 0 0 1px 1px;
+      border-style: solid;
+      border-color: #959da6;
+      content: '';
+    }
+  }
+}
+
+.subscribe-confirm-msg {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+}

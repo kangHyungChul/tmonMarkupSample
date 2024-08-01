@@ -1,0 +1,55 @@
+@import 'default'; // 공통 로드
+
+#content {
+  &.complete-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.complete-wrap {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.complete-msg {
+  position: relative;
+  padding-top: 50px;
+  i {
+    display: block;
+    position: absolute;
+    top: -57px;
+    left: calc(50% - calc(208px / 2));
+    width: 208px;
+    height: 107px;
+    background: 0 -25px / auto $sprite-height url($sprite-url) no-repeat;
+  }
+  &__title {
+    margin-top: 16px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+  }
+  &__benefit {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+.complete-btn {
+  margin-top: 50px;
+  [class*=__btn] {
+    width: 100%;
+  }
+  &__btn-check {
+    @include buttonSet($c-primary, $c-white);
+  }
+  &__btn-more {
+    margin-top: 8px;
+    @include buttonSet($c-white, $c-primary, $c-primary);
+  }
+}

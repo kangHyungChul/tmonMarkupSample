@@ -1,0 +1,104 @@
+/* color */
+$c-primary: #f54573;
+$c-secondary: #f27935;
+$c-gradient-start: #ff41f2;
+$c-graedient-end: #ee4814;
+$c-black: #000;
+$c-white: #fff;
+$c-darkGrey: #16181a;
+
+/* layout guide */
+$header-height: 58px;
+$fixbtn-height: 50px;
+
+/* content padding */
+$spacing-x-l: 20px;
+$spacing-x: 15px;
+$spacing-x-m: 10px;
+$spacing-y-l: 25px;
+$spacing-y: 20px;
+$spacing-y-m: 15px;
+
+/* z-index */
+$z-idx-header: 100;
+$z-idx-cmodal: 95;
+$z-idx-smodal: 90;
+$z-idx-fixbtn: 85;
+$z-idx-dimmed: 80;
+
+/* box-shadow */
+$box-shadow: 1px 2px 6px 0 rgba($c-black, 0.1);
+
+/* sprite */
+$sprite-url: '../img/icon_sprite.png';
+$sprite-height: calc(264px / 2); // 이미지 스프라이트용
+
+/* mixin */
+@mixin borderRadius($round: 0) {
+  overflow: hidden;
+  border-radius: $round;
+}
+@mixin appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* function */
+@function gradientSet($deg: 90deg, $list) {
+  @return linear-gradient($deg, $list);
+}
+
+/* modules */
+$form-size-height: (
+  'sm': 38px,
+  'md': 45px,
+  'lg': 52px
+);
+$form-size-font: (
+  'sm': 13px,
+  'md': 15px,
+  'lg': 17px
+);
+$form-size-spacing: (
+  'sm': 5px,
+  'md': 10px,
+  'lg': 15px
+);
+
+// 버튼호출 - 배경색, 글자색, 라인색(공백시 사용안함)
+@mixin buttonSet($bg, $color, $line: false) {
+  height: map-get($form-size-height, 'md');
+  padding: 0 map-get($form-size-spacing, 'md');
+  background-color: $bg;
+  font-size: map-get($form-size-font, 'md');
+  color: $color;
+  box-sizing: border-box;
+  text-align: center;
+  @at-root {
+    a#{&} {
+      display: block;
+      line-height: map-get($form-size-height, 'md');
+    }
+  }
+  @if ($line != false) {
+    border: 1px solid $line;
+  }
+  @include borderRadius(8px);
+  @each $value, $size in $form-size-height {
+    &.size-#{$value} {
+      height: $size;
+      padding: 0 map-get($form-size-font, $value);
+      font-size: map-get($form-size-font, $value);
+      @at-root {
+        a#{&} {
+          line-height: $size;
+        }
+      }
+    }
+  }
+  &.disabled, &:disabled {
+    background: #c2c7cc;
+    color: $c-white;
+  }
+}

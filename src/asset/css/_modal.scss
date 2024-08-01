@@ -1,0 +1,68 @@
+/* modal */
+.modal-dimmed {
+  position: fixed;
+  z-index: $z-idx-dimmed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($c-black, 0.6);
+}
+
+.modal-content {
+  position: fixed;
+  z-index: $z-idx-smodal;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-x;
+  background-color: transparent;
+  &__system {
+    display: block;
+    flex: 1;
+    max-width: 330px;
+    margin: 0 auto;
+    padding: 40px 20px 30px;
+    background-color: $c-white;
+    box-sizing: border-box;
+    @include borderRadius(16px);
+  }
+  &__content {
+    .s-title {
+      font-size: 16px;
+      text-align: center;
+      word-break: break-all;
+    }
+    .s-msg {
+      margin-top: 16px;
+      font-size: 14px;
+      text-align: center;
+      word-break: break-all;
+    }
+  }
+  &__btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    button[class*=__btn] {
+      flex: 1;
+      max-width: 140px;
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+  &__btn-ok {
+    @include buttonSet($c-primary, $c-white);
+  }
+  &__btn-cancel {
+    @include buttonSet($c-white, $c-primary, $c-primary);
+  }
+}

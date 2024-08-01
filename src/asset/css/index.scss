@@ -1,0 +1,43 @@
+@import 'default'; // 공통 로드
+
+#content {
+  &.index-page {
+    background-color: #f1f1f1;
+  }
+}
+
+.file-list {
+  &__title {
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: $c-darkGrey;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #d0d5d9;
+      background-color: $c-white;
+      box-shadow: $box-shadow;
+      @include borderRadius(10px);
+    }
+  }
+}
+
+.infor-text {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #6c7580;
+  > p {
+    margin-bottom: 4px;
+  }
+}

@@ -1,0 +1,147 @@
+/* app */
+#app {
+  &.full-flex {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+}
+
+/* header */
+.header {
+  position: relative;
+  z-index: $z-idx-header;
+  background-color: $c-white;
+  border-bottom: 1px solid $c-secondary;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $header-height;
+    // padding: 0 calc($spacing-x + );
+  }
+
+  &__title {
+    font-size: 19px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &__nav-btn {
+    position: absolute;
+    top: calc(($header-height - 36px) / 2);
+    width: 36px;
+    height: 36px;
+    i {
+      position: absolute;
+      display: block;
+      height: 2px;
+      background-color: $c-black;
+    }
+
+    &.prev {
+      left: 8px;
+      i {
+        top: calc(50% - 1px);
+        left: calc(50% - 9px);
+        &:nth-child(1) {
+          width: 12px;
+          transform: rotate(45deg);
+          transform-origin: left top;
+        }
+        &:nth-child(2) {
+          width: 12px;
+          transform: rotate(-45deg);
+          transform-origin: left bottom;
+        }
+        &:nth-child(3) {
+          width: 18px;
+        }
+      }
+    }
+
+    &.close {
+      right: 8px;
+      i {
+        width: 24px;
+        top: calc(50% - 1px);
+        left: calc(50% - 12px);
+        transform-origin: center center;
+        &:first-child {
+          transform: rotate(-45deg);
+        }
+        &:last-child {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+  }
+}
+
+/* fixbtn-area */
+.fixed-btn-wrap {
+  position: fixed;
+  z-index: $z-idx-fixbtn;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: $spacing-y-m $spacing-x calc(constant(safe-area-inset-bottom) + $spacing-y-m);
+  padding: $spacing-y-m $spacing-x calc(env(safe-area-inset-bottom) + $spacing-y-m);
+  box-shadow: 0 -2px 10px rgba($c-black, 0.1);
+  background-color: $c-white;
+  &__btn-submit {
+    width: 100%;
+    height: $fixbtn-height;
+    padding: 0 $spacing-x;
+    text-align: center;
+    color: $c-white;
+    font-size: 18px;
+    font-weight: 700;
+    background: gradientSet(90deg, ($c-gradient-start 0%, $c-graedient-end 100%));
+    @include borderRadius(8px);
+    &.disabled, &:disabled {
+      background: #c2c7cc;
+    }
+  }
+}
+
+/* content */
+#content {
+  padding: $spacing-y $spacing-x calc(constant(safe-area-inset-bottom) + (($fixbtn-height + ($spacing-y-m * 2)) + $spacing-y)); // 하단영역 iOS대응 + (하단버튼크기 + 위아래버튼여백) + 컨텐츠 기본하단영역 
+  padding: $spacing-y $spacing-x calc(env(safe-area-inset-bottom) + (($fixbtn-height + ($spacing-y-m * 2)) + $spacing-y));
+  background-color: $c-white;
+  .full-flex & {
+    flex: 1;
+  }
+  .non-spacing & {
+    padding: 0 0 calc(constant(safe-area-inset-bottom) + (($fixbtn-height + ($spacing-y-m * 2)) + $spacing-y)) 0;
+    padding: 0 0 calc(env(safe-area-inset-bottom) + (($fixbtn-height + ($spacing-y-m * 2)) + $spacing-y)) 0;
+  }
+  .non-fixed-btn & {
+    padding-bottom: $spacing-y;
+  }
+}
+
+
+/* */
+.skip-nav {}
+.blind {
+  position: absolute;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+/* */
+.fc-primary {
+  color: $c-primary;
+}
+.fc-secondary {
+  color: $c-secondary
+}

@@ -1,0 +1,6 @@
+/* default.scss */
+
+@import 'util'; // 공통css 색상선언, 공통모듈 등
+@import 'reset'; // 초기화css
+@import 'layout'; // 레이아웃 - header, 하단버튼영역 등
+@import 'modal'; // 모달

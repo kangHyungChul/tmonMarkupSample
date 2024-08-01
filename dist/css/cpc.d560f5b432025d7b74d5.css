@@ -1,0 +1,529 @@
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/asset/css/card.scss ***!
+  \******************************************************************************************************************/
+@charset "UTF-8";
+/* default.scss */ /* color */
+/* layout guide */
+/* content padding */
+/* z-index */
+/* box-shadow */
+/* sprite */
+/* mixin */
+/* function */
+/* modules */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, menu, ol, ul, li, input,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+*[hidden] {
+  display: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, "돋움", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #000;
+  background-color: #fff;
+  -webkit-text-size-adjust: none;
+}
+
+a {
+  color: inherit;
+}
+
+a, button, input, select, label {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+i, em, address {
+  font-style: normal;
+}
+
+button, input {
+  border-radius: 0;
+  touch-action: manipulation;
+  background-color: #fff;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+}
+
+a, a:link, a:visited, a:focus, a:hover, a:active {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* app */
+#app.full-flex {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* header */
+.header {
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+  border-bottom: 1px solid #f27935;
+}
+.header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+}
+.header__title {
+  font-size: 19px;
+  text-align: center;
+  font-weight: 500;
+}
+.header__nav-btn {
+  position: absolute;
+  top: 11px;
+  width: 36px;
+  height: 36px;
+}
+.header__nav-btn i {
+  position: absolute;
+  display: block;
+  height: 2px;
+  background-color: #000;
+}
+.header__nav-btn.prev {
+  left: 8px;
+}
+.header__nav-btn.prev i {
+  top: calc(50% - 1px);
+  left: calc(50% - 9px);
+}
+.header__nav-btn.prev i:nth-child(1) {
+  width: 12px;
+  transform: rotate(45deg);
+  transform-origin: left top;
+}
+.header__nav-btn.prev i:nth-child(2) {
+  width: 12px;
+  transform: rotate(-45deg);
+  transform-origin: left bottom;
+}
+.header__nav-btn.prev i:nth-child(3) {
+  width: 18px;
+}
+.header__nav-btn.close {
+  right: 8px;
+}
+.header__nav-btn.close i {
+  width: 24px;
+  top: calc(50% - 1px);
+  left: calc(50% - 12px);
+  transform-origin: center center;
+}
+.header__nav-btn.close i:first-child {
+  transform: rotate(-45deg);
+}
+.header__nav-btn.close i:last-child {
+  transform: rotate(45deg);
+}
+
+/* fixbtn-area */
+.fixed-btn-wrap {
+  position: fixed;
+  z-index: 85;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px 15px calc(constant(safe-area-inset-bottom) + 15px);
+  padding: 15px 15px calc(env(safe-area-inset-bottom) + 15px);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.fixed-btn-wrap__btn-submit {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff41f2 0%, #ee4814 100%);
+  overflow: hidden;
+  border-radius: 8px;
+}
+.fixed-btn-wrap__btn-submit.disabled, .fixed-btn-wrap__btn-submit:disabled {
+  background: #c2c7cc;
+}
+
+/* content */
+#content {
+  padding: 20px 15px calc(constant(safe-area-inset-bottom) + 100px);
+  padding: 20px 15px calc(env(safe-area-inset-bottom) + 100px);
+  background-color: #fff;
+}
+.full-flex #content {
+  flex: 1;
+}
+.non-spacing #content {
+  padding: 0 0 calc(constant(safe-area-inset-bottom) + 100px) 0;
+  padding: 0 0 calc(env(safe-area-inset-bottom) + 100px) 0;
+}
+.non-fixed-btn #content {
+  padding-bottom: 20px;
+}
+
+/* */
+.blind {
+  position: absolute;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+/* */
+.fc-primary {
+  color: #f54573;
+}
+
+.fc-secondary {
+  color: #f27935;
+}
+
+/* modal */
+.modal-dimmed {
+  position: fixed;
+  z-index: 80;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  position: fixed;
+  z-index: 90;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: transparent;
+}
+.modal-content__system {
+  display: block;
+  flex: 1;
+  max-width: 330px;
+  margin: 0 auto;
+  padding: 40px 20px 30px;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.modal-content__content .s-title {
+  font-size: 16px;
+  text-align: center;
+  word-break: break-all;
+}
+.modal-content__content .s-msg {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+  word-break: break-all;
+}
+.modal-content__btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.modal-content__btn-wrap button[class*=__btn] {
+  flex: 1;
+  max-width: 140px;
+}
+.modal-content__btn-wrap button[class*=__btn]:not(:first-child) {
+  margin-left: 5px;
+}
+.modal-content__btn-ok {
+  height: 45px;
+  padding: 0 10px;
+  background-color: #f54573;
+  font-size: 15px;
+  color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+a.modal-content__btn-ok {
+  display: block;
+  line-height: 45px;
+}
+
+.modal-content__btn-ok.size-sm {
+  height: 38px;
+  padding: 0 13px;
+  font-size: 13px;
+}
+a.modal-content__btn-ok.size-sm {
+  line-height: 38px;
+}
+
+.modal-content__btn-ok.size-md {
+  height: 45px;
+  padding: 0 15px;
+  font-size: 15px;
+}
+a.modal-content__btn-ok.size-md {
+  line-height: 45px;
+}
+
+.modal-content__btn-ok.size-lg {
+  height: 52px;
+  padding: 0 17px;
+  font-size: 17px;
+}
+a.modal-content__btn-ok.size-lg {
+  line-height: 52px;
+}
+
+.modal-content__btn-ok.disabled, .modal-content__btn-ok:disabled {
+  background: #c2c7cc;
+  color: #fff;
+}
+.modal-content__btn-cancel {
+  height: 45px;
+  padding: 0 10px;
+  background-color: #fff;
+  font-size: 15px;
+  color: #f54573;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #f54573;
+  overflow: hidden;
+  border-radius: 8px;
+}
+a.modal-content__btn-cancel {
+  display: block;
+  line-height: 45px;
+}
+
+.modal-content__btn-cancel.size-sm {
+  height: 38px;
+  padding: 0 13px;
+  font-size: 13px;
+}
+a.modal-content__btn-cancel.size-sm {
+  line-height: 38px;
+}
+
+.modal-content__btn-cancel.size-md {
+  height: 45px;
+  padding: 0 15px;
+  font-size: 15px;
+}
+a.modal-content__btn-cancel.size-md {
+  line-height: 45px;
+}
+
+.modal-content__btn-cancel.size-lg {
+  height: 52px;
+  padding: 0 17px;
+  font-size: 17px;
+}
+a.modal-content__btn-cancel.size-lg {
+  line-height: 52px;
+}
+
+.modal-content__btn-cancel.disabled, .modal-content__btn-cancel:disabled {
+  background: #c2c7cc;
+  color: #fff;
+}
+
+#content.card-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+}
+
+.card-tab {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 1px 2px 8px 0 rgba(0, 0, 0, 0.1);
+}
+.card-tab__tab-btn {
+  flex: 1;
+  height: 50px;
+  font-size: 15px;
+  text-align: center;
+  color: #959da6;
+  border-bottom: 2px solid transparent;
+}
+.card-tab__tab-btn.selected {
+  color: #f54573;
+  border-color: #f54573;
+}
+.card-tab__tab-title {
+  font: inherit;
+}
+
+/* 카드발급 */
+.payment-card-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.card-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 254px;
+  height: 254px;
+  margin: 0 auto;
+}
+.card-wrap__card-guide.type-vertical {
+  width: 160px;
+  height: 100%;
+}
+.card-wrap__card-guide.type-horizontal {
+  width: 100%;
+  height: 160px;
+}
+.card-wrap__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.card-wrap__image img {
+  max-height: 100%;
+}
+.card-wrap__btn-add-card {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f54573;
+  border: 1px dashed #f54573;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.card-wrap__btn-add-card i {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 0 auto 8px;
+  background: -37px 0/auto 132px url(../asset/img/icon_sprite.png) no-repeat;
+}
+
+.card-notice-msg {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.card-notice-msg__title {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+/* 제휴카드 발급 */
+.card-alliance {
+  padding: 0 15px;
+}
+
+.card-list__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.card-list__card-link {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #d0d5d9;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.card-list__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+.card-list__image img {
+  max-height: 100%;
+}
+.card-list__infor {
+  flex: 1;
+}
+.card-list__infor .card-name {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+.card-list__infor .card-benefit {
+  font-size: 13px;
+  color: #6c7580;
+  line-height: 1.4;
+  word-break: break-all;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+
+		<link rel="shortcut icon" type="image/x-icon" href="" />
+		<title><%= title %></title>
+		
+		<link rel="canonical" href="" />
+
+		<meta name='application-name' content="" />
+		<meta name='msapplication-tooltip' content="" />
+		<meta name='description' content="" />
+		<meta name='keywords' content="" />
+		
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content=""/>
+		<meta id='meta_og_title' property='og:title' content="" />
+		<meta property='og:description' content="" />
+		<meta id='meta_og_image' property="og:image" content="" />
+		<meta property="og:image:width" content="1200"/>
+		<meta property="og:image:height" content="627"/>
+
+	</head>
+
+	<body>
+
+		<div id="app" class="full-flex non-spacing"> <!-- 전체 풀페이지시 full-flex class 추가 / 좌우여백 없을 시 non-spacing 추가 -->
+
+			<!-- skip nav -->
+			<div class="skip-nav blind">
+				<a href="#content">본문 바로가기</a>
+			</div>
+
+			<!-- header -->
+			<header id="header" class="header">
+				<h1 class="blind">TMON</h1>
+				<div class="header__inner">
+					<h2 class="header__title">구독 신청하기</h2>
+					<nav class="header__nav">
+						<button type="button" class="header__nav-btn prev" aria-label="이전페이지">
+							<i aria-hidde="true"></i>
+							<i aria-hidde="true"></i>
+							<i aria-hidde="true"></i>
+						</button>
+						<button type="button" class="header__nav-btn close" aria-label="닫기">
+							<i aria-hidde="true"></i>
+							<i aria-hidde="true"></i>
+						</button>
+					</nav>
+				</div>
+			</header>
+
+			<!-- content -->
+			<section id="content" class="card-page">
+
+				<!-- 탭 부모요소 role tablist 추가 -->
+				<div class="card-tab" role="tablist">
+					<!-- 탭은 선택 시 selected class 추가 / aria-selected값은 true로 / 탭대상 role tab 추가 / data-target에 타겟 지정 -->
+					<button type="button" class="card-tab__tab-btn" role="tab" aria-selected="true" data-target="payment-card">
+						<h3 class="card-tab__tab-title">카드 등록</h3>
+					</button>
+					<button type="button" class="card-tab__tab-btn" role="tab" aria-selected="false" data-target="card-alliance">
+						<h3 class="card-tab__tab-title">제휴카드 발급</h3>
+					</button>
+				</div>
+
+				<!-- 카드등록 / 탭 대상 tabpanel 추가 / 탭버튼에 지정한 data-target값을 id로 지정 -->
+				<div id="payment-card" class="payment-card-wrap" role="tabpanel">
+
+					<div class="card-wrap">
+						<div class="card-wrap__card-guide type-vertical">
+							<button type="button" class="card-wrap__btn-add-card">
+								<i></i>
+								결제 카드 등록
+							</button>
+						</div>
+					</div>
+					<div class="card-notice-msg">
+						<p>매월 정기결제를 위한<br/>신용카드를 등록해주세요.</p>
+					</div>
+
+					<div class="fixed-btn-wrap">
+						<!-- 버튼 비활성화 처리 시 disabled class 추가 혹은 disabled attr추가 -->
+						<button type="button" class="fixed-btn-wrap__btn-submit disabled" disabled>1회차 정기결제를 요청합니다.</button>
+					</div>
+
+				</div>
+				
+				<!-- 제휴카드 발급  / 탭 대상 tabpanel 추가 / 탭버튼에 지정한 data-target값을 id로 지정 -->
+				<div id="card-alliance" class="card-alliance" role="tabpanel">
+					<ul class="card-list">
+
+						<li class="card-list__item">
+							<a href="#" class="card-list__card-link">
+								<div class="card-list__image">
+									<img src="../../asset/img/card_vertical.png" alt="" />
+								</div>
+								<div class="card-list__infor">
+									<strong class="card-name">티몬 x 롯데카드</strong>
+									<div class="card-benefit">
+										<p>매일 구독금액 <em class="fc-primary">15,000원</em> 청구할인</p>
+									</div>
+								</div>
+							</a>
+						</li>
+
+						<li class="card-list__item">
+							<a href="#" class="card-list__card-link">
+								<div class="card-list__image">
+									<img src="../../asset/img/card_horizontal.png" alt="" />
+								</div>
+								<div class="card-list__infor">
+									<strong class="card-name">티몬 x 롯데카드</strong>
+									<div class="card-benefit">
+										<p>매일 구독금액 <em class="fc-primary">15,000원</em> 청구할인</p>
+										<p>사은품 LG 프라엘 증정</p>
+									</div>
+								</div>
+							</a>
+						</li>
+
+						<li class="card-list__item">
+							<a href="#" class="card-list__card-link">
+								<div class="card-list__image">
+									<img src="../../asset/img/card_vertical.png" alt="" />
+								</div>
+								<div class="card-list__infor">
+									<strong class="card-name">티몬 x 롯데카드</strong>
+									<div class="card-benefit">
+										<p>매일 구독금액 <em class="fc-primary">15,000원</em> 청구할인</p>
+										<p>사은품 LG 프라엘 증정</p>
+										<p>3줄 제휴카드 안내내용입니다.</p>
+									</div>
+								</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+
+			</section>
+
+		</div>
+
+	</body>
+</html>
